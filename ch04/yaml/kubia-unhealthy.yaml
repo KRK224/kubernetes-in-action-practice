@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kubia-unhealthy-liveness
+  namespace: default
+spec:
+  containers:
+    - image: krk224tmax/kubia-unhealthy:amd
+      name: kubia
+      livenessProbe:
+        httpGet:
+          path: /
+          port: 8080
+

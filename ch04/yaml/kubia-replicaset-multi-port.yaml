@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: kubia-multi-port
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: kubia
+  template:
+    metadata:
+      labels:
+        app: kubia
+    spec:
+      containers:
+        - name: kubia
+          image: krk224tmax/kubia:amd
+          ports:
+            - name: http
+              containerPort: 8080
+            - name: https
+              containerPort: 8443

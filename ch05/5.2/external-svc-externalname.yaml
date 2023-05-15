@@ -1,0 +1,13 @@
+# 외부 서비스와 연결 시에, IP 대신 DNS를 사용하는 법
+# 이때 서비스는 CNAME 형태로 관리 -> ClusterIP 할당되지 않음
+# CNAME 레코드는 IP 주소 대신 FQDN(정규화된 도메인 이름)을 가리킨다.
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: externa-service-externalname
+spec:
+  type: ExternalName
+  externalName: someapi.somecompany.com
+  ports:
+  - port: 80

@@ -1,0 +1,11 @@
+# 서비스가 파드와 연결되기 위해서는 엔드포인트 리소스가 필요
+# 이는 selector를 통해 구현되는데, 
+# 이번 예시에서는 selector 없이 svc먼저 구성 후에 endpoints 리소스와 연결하는 실습.
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: external-service # 서비스 이름은 엔드포인트 오브젝트 이름과 일치해야 한다.
+spec:
+  ports:
+    port: 80

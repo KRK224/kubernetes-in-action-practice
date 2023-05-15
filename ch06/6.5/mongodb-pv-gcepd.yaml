@@ -1,0 +1,15 @@
+# 이번 manifest에서는 PV 리소스를 정의한다.
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: mongodb-pv
+spec:
+  capacity:
+    storage: 10Gi
+  accessModes:
+  - ReadWriteOnce
+  - ReadOnlyMany
+  persistentVolumeReclaimPolicy: Retain # 클레임이 해제된 후 PV의 상태를 정의: 유지해야함
+  gcePersistentDisk:
+    pdName: mongodb
+    fsType: ext4
