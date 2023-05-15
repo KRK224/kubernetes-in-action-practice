@@ -1,0 +1,12 @@
+# svc 잠시 리마인드용 작성
+apiVersion: v1
+kind: Service
+metadata:
+  name: fortune-svc
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80 # 해당 서비스의 포트
+    targetPort: 8080 # 컨테이너 포트
+  selector:
+    app: fortune
