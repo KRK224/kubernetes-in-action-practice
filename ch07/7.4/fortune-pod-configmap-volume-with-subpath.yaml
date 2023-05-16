@@ -33,7 +33,7 @@ spec:
       readOnly: true
     - name: config  # 볼륨 이름
       mountPath: /etc/nginx/conf.d/someconfig.conf  # 생성할 파일 이름
-      subPath: my-nginx-config.conf  # 전체 볼륨 자체를 마운트하는 것이 아닌 특정 파일이나 디렉토리를 마운트
+      subPath: my-nginx-config.conf  # 전체 볼륨 자체를 마운트하는 것이 아닌 특정 파일이나 디렉토리를 마운트, configMap Volume 외에도 모든 volume에서 사용 가능
       readOnly: true
     ports:
     - containerPort: 80
