@@ -1,0 +1,11 @@
+apiVersion: v1
+data:
+  env: production
+  sleep-interval: "10"
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2023-05-15T07:31:06Z"
+  name: fortune-config
+  namespace: production
+  resourceVersion: "4592058"
+  uid: 02206099-2d86-460b-93ad-5acef9c38589

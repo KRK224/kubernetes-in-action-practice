@@ -9,4 +9,4 @@ spec:
   - port: 80 # 해당 서비스의 포트
     targetPort: 8080 # 컨테이너 포트
   selector:
-    app: fortune
+    app: fortune # 파드 선택
