@@ -1,0 +1,27 @@
+# svc 잠시 리마인드용 작성
+apiVersion: v1
+kind: Service
+metadata:
+  name: fortune-svc
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 3000 # 해당 서비스의 포트
+    targetPort: 80 # 컨테이너 포트
+  selector: # 여러개 적으면 AND 연산으로 동작
+    type: configmap
+    app: fortune
+---
+# svc 잠시 리마인드용 작성
+apiVersion: v1
+kind: Service
+metadata:
+  name: fortune-svc-args
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 4000 # 해당 서비스의 포트
+    targetPort: 80 # 컨테이너 포트
+  selector: # 여러개 적으면 AND 연산으로 동작
+    type: args-configmap
+    app: fortune

@@ -1,0 +1,11 @@
+apiVersion: v1
+data:
+  env: develop
+  sleep-interval: "25"
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2023-05-15T07:35:46Z"
+  name: fortune-config
+  namespace: develop
+  resourceVersion: "4591554"
+  uid: 26498030-2123-48fa-8d42-00dbdc69e249
