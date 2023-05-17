@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubia
+spec:
+  replicas: 3
+  minReadySeconds: 10
+  # 책에서 나온 내용과 다르게 업데이트 된 내용
+  ## selector를 Deployment spec에 명시하고, template 내에서도 labeling을한다.
+  selector:
+    matchLabels:
+      app: kubia
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  template:
+    metadata:
+      name: kubia
+      labels: 
+        app: kubia
+    spec:
+      containers:
+      - name: nodejs
+        image: krk224tmax/kubia:v1
+        readinessProbe:
+          periodSeconds: 1
+          httpGet:
+            path: /
+            port: 8080
+        ports:
+        - containerPort: 8080
+          name: default-http
