@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: curl
+  namespace: api-server
+spec:
+  containers:
+  - name: main
+    image: curlimages/curl
+    command: ["sleep", "99999999"]
