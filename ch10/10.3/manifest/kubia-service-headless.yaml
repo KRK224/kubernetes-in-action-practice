@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: kubia
+spec:
+  clusterIP: None  # 스테이트풀셋의 거버닝 서비스는 헤드리스여야 한다.
+  selector:
+    app: kubia
+  ports:
+    - name: http
+      port: 80
