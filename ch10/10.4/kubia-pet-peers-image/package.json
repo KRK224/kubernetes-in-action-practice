@@ -1,0 +1,12 @@
+{
+  "name": "kubia-pet-peers-image",
+  "version": "1.0.0",
+  "description": "스테이트풀셋에서 생성한 파드의 어플리케이션이 함께 생성된 (피어) 파드와 통신하는 예제",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "krk224",
+  "license": "ISC"
+}
